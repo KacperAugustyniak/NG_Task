@@ -44,8 +44,6 @@ class JsonParser:NSObject, JsonDownloaderObjCDelegate {
     jsonDwnld.downloadJsonForUrl(self.url)
   }
 
- // -(void)jsonDataDidDownload:(NSDictionary *)jsonData;
-
   func jsonDataDidDownload(jsonData: [NSObject : AnyObject]) {
     
     

@@ -16,7 +16,7 @@
   [super viewDidLoad];
   NSString * url = @"http://gameofthrones.wikia.com/api/v1/Articles/Top?expand=1&category=Characters&limit=75";
   //self.downloader = [[ImageDownloader alloc]init];
-  self.jsonParser = [[JsonParser alloc] initWithUrl:url];
+  self.jsonParser = [[JsonParserObjC alloc] initWithUrl:url];
   self.jsonParser.delegate = self;
 }
 

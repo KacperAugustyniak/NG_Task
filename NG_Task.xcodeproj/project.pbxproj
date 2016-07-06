@@ -17,6 +17,8 @@
 		A74C482C1D2D073800BFB56E /* JSONgetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C482A1D2D073800BFB56E /* JSONgetter.swift */; };
 		A74C482E1D2D0B7900BFB56E /* JSONDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C482D1D2D0B7900BFB56E /* JSONDataParser.swift */; };
 		A74C48331D2D4F3E00BFB56E /* JsonDownloaderObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = A74C48321D2D4F3E00BFB56E /* JsonDownloaderObjC.m */; };
+		A74C48371D2D5A5300BFB56E /* CharacterDataObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = A74C48361D2D5A5300BFB56E /* CharacterDataObjC.m */; };
+		A74C483A1D2D5E8000BFB56E /* JsonParserObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = A74C48391D2D5E8000BFB56E /* JsonParserObjC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,10 @@
 		A74C482D1D2D0B7900BFB56E /* JSONDataParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDataParser.swift; sourceTree = "<group>"; };
 		A74C48311D2D4F3E00BFB56E /* JsonDownloaderObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonDownloaderObjC.h; sourceTree = "<group>"; };
 		A74C48321D2D4F3E00BFB56E /* JsonDownloaderObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonDownloaderObjC.m; sourceTree = "<group>"; };
+		A74C48351D2D5A5300BFB56E /* CharacterDataObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterDataObjC.h; sourceTree = "<group>"; };
+		A74C48361D2D5A5300BFB56E /* CharacterDataObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterDataObjC.m; sourceTree = "<group>"; };
+		A74C48381D2D5E8000BFB56E /* JsonParserObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonParserObjC.h; sourceTree = "<group>"; };
+		A74C48391D2D5E8000BFB56E /* JsonParserObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonParserObjC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				A74C482F1D2D161900BFB56E /* Swift clases */,
+				A74C48341D2D5A0100BFB56E /* Obj-C clases */,
 				A74C48171D2D070C00BFB56E /* ViewController.h */,
 				A74C48181D2D070C00BFB56E /* ViewController.m */,
 				A74C481A1D2D070C00BFB56E /* Main.storyboard */,
@@ -97,10 +104,21 @@
 				A74C48291D2D073800BFB56E /* ImageDownloader.swift */,
 				A74C482A1D2D073800BFB56E /* JSONgetter.swift */,
 				A74C482D1D2D0B7900BFB56E /* JSONDataParser.swift */,
-				A74C48311D2D4F3E00BFB56E /* JsonDownloaderObjC.h */,
-				A74C48321D2D4F3E00BFB56E /* JsonDownloaderObjC.m */,
 			);
 			name = "Swift clases";
+			sourceTree = "<group>";
+		};
+		A74C48341D2D5A0100BFB56E /* Obj-C clases */ = {
+			isa = PBXGroup;
+			children = (
+				A74C48311D2D4F3E00BFB56E /* JsonDownloaderObjC.h */,
+				A74C48321D2D4F3E00BFB56E /* JsonDownloaderObjC.m */,
+				A74C48351D2D5A5300BFB56E /* CharacterDataObjC.h */,
+				A74C48361D2D5A5300BFB56E /* CharacterDataObjC.m */,
+				A74C48381D2D5E8000BFB56E /* JsonParserObjC.h */,
+				A74C48391D2D5E8000BFB56E /* JsonParserObjC.m */,
+			);
+			name = "Obj-C clases";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,10 +195,12 @@
 				A74C482C1D2D073800BFB56E /* JSONgetter.swift in Sources */,
 				A74C48191D2D070C00BFB56E /* ViewController.m in Sources */,
 				A74C482E1D2D0B7900BFB56E /* JSONDataParser.swift in Sources */,
+				A74C48371D2D5A5300BFB56E /* CharacterDataObjC.m in Sources */,
 				A74C48161D2D070C00BFB56E /* AppDelegate.m in Sources */,
 				A74C48331D2D4F3E00BFB56E /* JsonDownloaderObjC.m in Sources */,
 				A74C482B1D2D073800BFB56E /* ImageDownloader.swift in Sources */,
 				A74C48131D2D070C00BFB56E /* main.m in Sources */,
+				A74C483A1D2D5E8000BFB56E /* JsonParserObjC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

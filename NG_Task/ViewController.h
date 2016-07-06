@@ -6,13 +6,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NG_Task-Swift.h"
+//#import "NG_Task-Swift.h"
+#import "JsonParserObjC.h"
 
-@interface ViewController : UIViewController <JsonParserDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface ViewController : UIViewController <JsonParserObjCDelegate, UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property JsonParser * jsonParser;
-@property NSMutableArray <CharacterData *> * charactersData;
+@property JsonParserObjC * jsonParser;
+@property NSMutableArray <CharacterDataObjC *> * charactersData;
 
 
 @end
