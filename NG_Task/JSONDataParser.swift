@@ -1,6 +1,5 @@
 //
 //  JSONDataParser.swift
-//  Qpony_Zadanie
 //
 //  Created by Kacper Augustyniak on 07/06/16.
 //  Copyright © 2016 Kacper Augustyniak. All rights reserved.
@@ -26,11 +25,11 @@ class CharacterData:NSObject {
   func dataDidParse(charactersData: NSMutableArray)
 }
 
-class JsonParser:NSObject, JsonDownloaderDelegate {
+class JsonParser:NSObject, JsonDownloaderObjCDelegate {
 
   var charsData:Array<CharacterData>?
   var url:String!
-  var jsonDwnld:JsonDownloader!
+  var jsonDwnld:JsonDownloaderObjC!
   weak var delegate:JsonParserDelegate?
   
   
@@ -39,13 +38,15 @@ class JsonParser:NSObject, JsonDownloaderDelegate {
     self.url = url
     
     charsData = []
-    jsonDwnld = JsonDownloaderUsingNSURLSession()
+    //jsonDwnld = JsonDownloaderUsingNSURLSession()
+    jsonDwnld = JsonDownloaderObjC()
     jsonDwnld.delegate = self
     jsonDwnld.downloadJsonForUrl(self.url)
   }
 
-  
-  func jsonDataDidDownload(jsonData: NSDictionary) {
+ // -(void)jsonDataDidDownload:(NSDictionary *)jsonData;
+
+  func jsonDataDidDownload(jsonData: [NSObject : AnyObject]) {
     
     
     let allChars = jsonData["items"] as? [AnyObject]
@@ -54,13 +55,12 @@ class JsonParser:NSObject, JsonDownloaderDelegate {
     
       let title = character["title"] as? String
       let abstract = character["abstract"] as? String
-      
-      let singleCharacter = CharacterData(title: title!, abstract:abstract!, iconUrl:nil)
+      let url = character["thumbnail"] as? String
+      let singleCharacter = CharacterData(title: title!, abstract:abstract!, iconUrl:url)
 
       charsData?.append(singleCharacter)
       
       }
-    //print(weatherData)
     delegate?.dataDidParse(NSMutableArray(array: charsData!))
   }
   

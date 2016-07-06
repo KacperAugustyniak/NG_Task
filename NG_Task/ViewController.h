@@ -1,6 +1,5 @@
 //
 //  ViewController.h
-//  NG_Task
 //
 //  Created by Kacper Augustyniak on 06/07/16.
 //  Copyright © 2016 Kacper Augustyniak. All rights reserved.

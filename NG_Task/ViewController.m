@@ -1,7 +1,3 @@
-//
-//  ViewController.m
-//  NG_Task
-//
 //  Created by Kacper Augustyniak on 06/07/16.
 //  Copyright © 2016 Kacper Augustyniak. All rights reserved.
 //
@@ -14,6 +10,7 @@
 
 @implementation ViewController
 
+#pragma mark - view controller methods
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -26,10 +23,12 @@
 -(void) dataDidParse:(NSMutableArray *)charactersData{
   self.charactersData = charactersData;
 //  for (int i = 0; i <  self.charactersData.count; i++) {
-//    NSLog(@"downloaded %@", self.charactersData[i].title);
+//    NSLog(@"downloaded %@", self.charactersData[i].abstract);
 //  }
   [self.tableView reloadData];
 }
+
+#pragma mark - table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -48,16 +47,14 @@
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
   
   if (cell == nil) {
-    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:simpleTableIdentifier];
   }
   
   cell.textLabel.text = self.charactersData[indexPath.row].title ;
-
+  cell.detailTextLabel.text = self.charactersData[indexPath.row].abstract;
+  cell.detailTextLabel.numberOfLines = 1;
+  
   return cell;
-}
-
-- (void)didReceiveMemoryWarning {
-  [super didReceiveMemoryWarning];
 }
 
 @end

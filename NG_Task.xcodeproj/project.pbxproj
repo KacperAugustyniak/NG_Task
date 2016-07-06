@@ -16,6 +16,7 @@
 		A74C482B1D2D073800BFB56E /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C48291D2D073800BFB56E /* ImageDownloader.swift */; };
 		A74C482C1D2D073800BFB56E /* JSONgetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C482A1D2D073800BFB56E /* JSONgetter.swift */; };
 		A74C482E1D2D0B7900BFB56E /* JSONDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C482D1D2D0B7900BFB56E /* JSONDataParser.swift */; };
+		A74C48331D2D4F3E00BFB56E /* JsonDownloaderObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = A74C48321D2D4F3E00BFB56E /* JsonDownloaderObjC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,8 @@
 		A74C48291D2D073800BFB56E /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		A74C482A1D2D073800BFB56E /* JSONgetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONgetter.swift; sourceTree = "<group>"; };
 		A74C482D1D2D0B7900BFB56E /* JSONDataParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDataParser.swift; sourceTree = "<group>"; };
+		A74C48311D2D4F3E00BFB56E /* JsonDownloaderObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonDownloaderObjC.h; sourceTree = "<group>"; };
+		A74C48321D2D4F3E00BFB56E /* JsonDownloaderObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonDownloaderObjC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,8 @@
 				A74C48291D2D073800BFB56E /* ImageDownloader.swift */,
 				A74C482A1D2D073800BFB56E /* JSONgetter.swift */,
 				A74C482D1D2D0B7900BFB56E /* JSONDataParser.swift */,
+				A74C48311D2D4F3E00BFB56E /* JsonDownloaderObjC.h */,
+				A74C48321D2D4F3E00BFB56E /* JsonDownloaderObjC.m */,
 			);
 			name = "Swift clases";
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 				A74C48191D2D070C00BFB56E /* ViewController.m in Sources */,
 				A74C482E1D2D0B7900BFB56E /* JSONDataParser.swift in Sources */,
 				A74C48161D2D070C00BFB56E /* AppDelegate.m in Sources */,
+				A74C48331D2D4F3E00BFB56E /* JsonDownloaderObjC.m in Sources */,
 				A74C482B1D2D073800BFB56E /* ImageDownloader.swift in Sources */,
 				A74C48131D2D070C00BFB56E /* main.m in Sources */,
 			);
@@ -330,6 +336,7 @@
 				A74C48271D2D070C00BFB56E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

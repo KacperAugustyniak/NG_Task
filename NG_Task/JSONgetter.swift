@@ -1,6 +1,5 @@
 //
 //  JSONgetter.swift
-//  Qpony_Zadanie
 //
 //  Created by Kacper Augustyniak on 06/06/16.
 //  Copyright © 2016 Kacper Augustyniak. All rights reserved.
