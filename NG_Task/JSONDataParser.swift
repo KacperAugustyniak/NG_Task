@@ -25,11 +25,11 @@ class CharacterData:NSObject {
   func dataDidParse(charactersData: NSMutableArray)
 }
 
-class JsonParser:NSObject, JsonDownloaderObjCDelegate {
+class JsonParser:NSObject, JsonDownloaderDelegate {
 
   var charsData:Array<CharacterData>?
   var url:String!
-  var jsonDwnld:JsonDownloaderObjC!
+  var jsonDwnld:JsonDownloader!
   weak var delegate:JsonParserDelegate?
   
   
@@ -39,12 +39,12 @@ class JsonParser:NSObject, JsonDownloaderObjCDelegate {
     
     charsData = []
     //jsonDwnld = JsonDownloaderUsingNSURLSession()
-    jsonDwnld = JsonDownloaderObjC()
+    jsonDwnld = JsonDownloader()
     jsonDwnld.delegate = self
     jsonDwnld.downloadJsonForUrl(self.url)
   }
 
-  func jsonDataDidDownload(jsonData: [NSObject : AnyObject]) {
+  func jsonDataDidDownload(jsonData: NSDictionary) {
     
     
     let allChars = jsonData["items"] as? [AnyObject]
