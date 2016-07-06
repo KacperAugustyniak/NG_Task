@@ -13,6 +13,9 @@
 		A74C481C1D2D070C00BFB56E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A74C481A1D2D070C00BFB56E /* Main.storyboard */; };
 		A74C481E1D2D070C00BFB56E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A74C481D1D2D070C00BFB56E /* Assets.xcassets */; };
 		A74C48211D2D070C00BFB56E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A74C481F1D2D070C00BFB56E /* LaunchScreen.storyboard */; };
+		A74C482B1D2D073800BFB56E /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C48291D2D073800BFB56E /* ImageDownloader.swift */; };
+		A74C482C1D2D073800BFB56E /* JSONgetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C482A1D2D073800BFB56E /* JSONgetter.swift */; };
+		A74C482E1D2D0B7900BFB56E /* JSONDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C482D1D2D0B7900BFB56E /* JSONDataParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,10 @@
 		A74C481D1D2D070C00BFB56E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A74C48201D2D070C00BFB56E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A74C48221D2D070C00BFB56E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A74C48281D2D073800BFB56E /* NG_Task-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NG_Task-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		A74C48291D2D073800BFB56E /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		A74C482A1D2D073800BFB56E /* JSONgetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONgetter.swift; sourceTree = "<group>"; };
+		A74C482D1D2D0B7900BFB56E /* JSONDataParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDataParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,14 +65,12 @@
 		A74C48101D2D070C00BFB56E /* NG_Task */ = {
 			isa = PBXGroup;
 			children = (
-				A74C48141D2D070C00BFB56E /* AppDelegate.h */,
-				A74C48151D2D070C00BFB56E /* AppDelegate.m */,
+				A74C482F1D2D161900BFB56E /* Swift clases */,
 				A74C48171D2D070C00BFB56E /* ViewController.h */,
 				A74C48181D2D070C00BFB56E /* ViewController.m */,
 				A74C481A1D2D070C00BFB56E /* Main.storyboard */,
 				A74C481D1D2D070C00BFB56E /* Assets.xcassets */,
 				A74C481F1D2D070C00BFB56E /* LaunchScreen.storyboard */,
-				A74C48221D2D070C00BFB56E /* Info.plist */,
 				A74C48111D2D070C00BFB56E /* Supporting Files */,
 			);
 			path = NG_Task;
@@ -74,9 +79,23 @@
 		A74C48111D2D070C00BFB56E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A74C48141D2D070C00BFB56E /* AppDelegate.h */,
+				A74C48151D2D070C00BFB56E /* AppDelegate.m */,
+				A74C48281D2D073800BFB56E /* NG_Task-Bridging-Header.h */,
+				A74C48221D2D070C00BFB56E /* Info.plist */,
 				A74C48121D2D070C00BFB56E /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A74C482F1D2D161900BFB56E /* Swift clases */ = {
+			isa = PBXGroup;
+			children = (
+				A74C48291D2D073800BFB56E /* ImageDownloader.swift */,
+				A74C482A1D2D073800BFB56E /* JSONgetter.swift */,
+				A74C482D1D2D0B7900BFB56E /* JSONDataParser.swift */,
+			);
+			name = "Swift clases";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,8 +169,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A74C482C1D2D073800BFB56E /* JSONgetter.swift in Sources */,
 				A74C48191D2D070C00BFB56E /* ViewController.m in Sources */,
+				A74C482E1D2D0B7900BFB56E /* JSONDataParser.swift in Sources */,
 				A74C48161D2D070C00BFB56E /* AppDelegate.m in Sources */,
+				A74C482B1D2D073800BFB56E /* ImageDownloader.swift in Sources */,
 				A74C48131D2D070C00BFB56E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,10 +288,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = NG_Task/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.NG-Task";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NG_Task-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -277,10 +302,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = NG_Task/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.NG-Task";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NG_Task-Bridging-Header.h";
 			};
 			name = Release;
 		};
