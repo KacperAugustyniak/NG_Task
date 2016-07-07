@@ -24,4 +24,5 @@
 @property (weak)id<JsonParserObjCDelegate> delegate;
 
 -(instancetype)initWithUrl:(NSString *) url;
+-(void) parseJsonData:(NSDictionary *)jsonData;
 @end

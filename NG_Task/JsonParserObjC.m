@@ -10,12 +10,15 @@
 
 @implementation JsonParserObjC
 
+-(instancetype)init{
+    self.charsData = [[NSMutableArray alloc] init];
+  return self;
+}
+
 -(instancetype)initWithUrl:(NSString *) url{
-  self = [super init];
+  self = [self init];
   
   self.url = url;
-  
-  self.charsData = [[NSMutableArray alloc] init];
   //jsonDwnld = JsonDownloaderUsingNSURLSession()
   self.jsonDwnld = [[JsonDownloaderObjC alloc] init];
   self.jsonDwnld.delegate = self;
@@ -24,7 +27,7 @@
   return self;
 }
 
--(void) jsonDataDidDownload:(NSDictionary *)jsonData{
+-(void) parseJsonData:(NSDictionary *)jsonData{
   NSMutableArray * allChars = [[NSMutableArray alloc] initWithArray:[jsonData objectForKey:@"items"]];
   
   for (NSDictionary* character in allChars ) {
@@ -36,6 +39,10 @@
     [self.charsData addObject:singleCharacter];
   }
   [self.delegate dataDidParse:self.charsData];
+}
+
+-(void) jsonDataDidDownload:(NSDictionary *)jsonData{
+  [self parseJsonData:jsonData];
 }
 
 @end
