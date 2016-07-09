@@ -12,8 +12,9 @@
 
 #pragma mark - view controller methods
 
-- (void)viewDidLoad {
-  [super viewDidLoad];
+-(void)viewDidAppear:(BOOL)animated{
+  [super viewDidAppear:animated];
+  
   NSString * url = @"http://gameofthrones.wikia.com/api/v1/Articles/Top?expand=1&category=Characters&limit=75";
   
   if (1) { //for demonstrative purposes. 1 allows JsonParserObjC to also download data. 0 JsonParserObjC parses data provided by ViewController downloaded by any other mean
@@ -27,8 +28,24 @@
   }
 }
 
+- (void)viewDidLoad {
+  [super viewDidLoad];
+}
+
+-(void)showErrorPopupWithMessage:(NSString *)message {
+  UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[NSString  stringWithFormat:@""] message:message preferredStyle:UIAlertControllerStyleAlert];
+
+  UIAlertAction *okAction = [UIAlertAction actionWithTitle:[NSString stringWithFormat:NSLocalizedString(@"OK",nil)] style:UIAlertActionStyleDefault  handler:^(UIAlertAction *action) { }];
+  
+  [alertController addAction:okAction];
+  
+  [self presentViewController:alertController animated:YES completion:nil];
+}
+
+#pragma mark - JsonParserObjCDelegate methods
+
 -(void) dataDidParse:(NSMutableArray *)charactersData{
-  NSLog(@"parsed");
+ // NSLog(@"parsed");
   self.charactersData = charactersData;
   [self.tableView reloadData];
 }
@@ -36,13 +53,15 @@
 #pragma mark - JsonDownloaderObjCDelegate methods
 
 -(void) jsonDataDidDownload:(NSDictionary *)jsonData{
-  NSLog(@"downloaded");
+  //NSLog(@"downloaded");
   [self.jsonParser parseJsonData:jsonData];
 }
 
-
 -(void)jsonError:(NSString *)errorMessage{
-  NSLog(@"Error:\n%@",errorMessage);
+
+  [self showErrorPopupWithMessage:[NSString stringWithFormat:@"An error occured while fetching data:\n%@",errorMessage]];
+  
+  //NSLog(@"An error occured while fetching data:\n%@",errorMessage);
 }
 
 #pragma mark - table view methods

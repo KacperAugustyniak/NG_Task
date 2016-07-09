@@ -16,7 +16,7 @@
     //NSLog(@"yes");
   } else {
     //NSLog(@"no");
-    [self.delegate jsonError:@"Cannot connect to host"];
+    [self.delegate jsonError:@"Server out of reach"];
     return;
   }
   

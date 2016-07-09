@@ -53,7 +53,6 @@
 
 -(void)jsonError:(NSString *)errorMessage{
   
-  NSLog(@"An error occured while fetching data:\n%@",self.delegate);
-  [self.delegate jsonError:[NSString stringWithFormat:@"An error occured while fetching data:\n%@",errorMessage]];
+  [self.delegate jsonError:[NSString stringWithFormat:@"%@",errorMessage]];
 }
 @end

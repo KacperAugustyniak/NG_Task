@@ -17,6 +17,5 @@
 @property JsonDownloaderObjC * jsonDownloaderObjC;
 @property NSMutableArray <CharacterDataObjC *> * charactersData;
 
-
 @end
 
