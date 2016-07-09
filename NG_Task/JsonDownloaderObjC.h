@@ -12,6 +12,7 @@
 @protocol JsonDownloaderObjCDelegate <NSObject>
 
 -(void)jsonDataDidDownload:(NSDictionary *)jsonData;
+-(void)jsonError:(NSString *)errorMessage;
 
 @end
 

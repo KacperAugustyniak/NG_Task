@@ -12,6 +12,7 @@
 
 @protocol JsonParserObjCDelegate <NSObject>
 
+-(void)jsonError:(NSString *)errorMessage;
 -(void)dataDidParse:(NSMutableArray *)charactersData;
 
 @end
@@ -23,6 +24,7 @@
 @property JsonDownloaderObjC * jsonDwnld;
 @property (weak)id<JsonParserObjCDelegate> delegate;
 
--(instancetype)initWithUrl:(NSString *) url;
+-(instancetype)initWithUrl:(NSString *) url delegate:(id<JsonParserObjCDelegate>)delegate;
+-(instancetype)initWithDelegate:(id<JsonParserObjCDelegate>)delegate;
 -(void) parseJsonData:(NSDictionary *)jsonData;
 @end

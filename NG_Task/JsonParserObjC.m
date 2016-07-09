@@ -15,15 +15,21 @@
   return self;
 }
 
--(instancetype)initWithUrl:(NSString *) url{
+-(instancetype)initWithUrl:(NSString *) url delegate:(id<JsonParserObjCDelegate>)delegate{
   self = [self init];
-  
+  self.delegate = delegate;
   self.url = url;
   //jsonDwnld = JsonDownloaderUsingNSURLSession()
   self.jsonDwnld = [[JsonDownloaderObjC alloc] init];
   self.jsonDwnld.delegate = self;
   [self.jsonDwnld downloadJsonForUrl:self.url];
   
+  return self;
+}
+
+-(instancetype)initWithDelegate:(id<JsonParserObjCDelegate>)delegate{
+  self = [self init];
+  self.delegate = delegate;
   return self;
 }
 
@@ -45,4 +51,9 @@
   [self parseJsonData:jsonData];
 }
 
+-(void)jsonError:(NSString *)errorMessage{
+  
+  NSLog(@"An error occured while fetching data:\n%@",self.delegate);
+  [self.delegate jsonError:[NSString stringWithFormat:@"An error occured while fetching data:\n%@",errorMessage]];
+}
 @end
