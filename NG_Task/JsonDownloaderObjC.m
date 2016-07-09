@@ -11,6 +11,13 @@
 @implementation JsonDownloaderObjC
 
 -(void)downloadJsonForUrl:(NSString*)stringUrl{
+  
+  if ([self checkIfHostIsAvailable:stringUrl]) {
+    NSLog(@"yes");
+  } else {
+    NSLog(@"no");
+  }
+  
   NSURL*url = [NSURL URLWithString:stringUrl];
   NSURLRequest* request = [NSURLRequest requestWithURL:url];
   NSURLSession* session = [NSURLSession sharedSession];
@@ -25,6 +32,18 @@
   
   [task resume];
   
+}
+
+- (bool)checkIfHostIsAvailable:(NSString *)hostUrl{
+  bool success = NO;
+  bool isAvailable = NO;
+  const char *hostName = [[NSString stringWithFormat:@"%@",hostUrl]cStringUsingEncoding:NSASCIIStringEncoding];
+  
+  SCNetworkReachabilityRef reachability = SCNetworkReachabilityCreateWithName(NULL,hostName);
+  SCNetworkReachabilityFlags flags;
+  success = SCNetworkReachabilityGetFlags(reachability, &flags);
+  isAvailable = success && (flags & kSCNetworkFlagsReachable) && !(flags & kSCNetworkFlagsConnectionRequired);
+  return isAvailable;
 }
 
 @end

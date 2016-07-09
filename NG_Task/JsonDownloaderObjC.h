@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <SystemConfiguration/SCNetworkReachability.h>
 
 @protocol JsonDownloaderObjCDelegate <NSObject>
 
